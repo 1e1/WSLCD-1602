@@ -125,7 +125,7 @@ void LSlave::check()
 }
 
 
-void LSlave::shutdown()
+void LSlave::idle()
 {
   if (LSlave::_state != SHUTDOWN) {
     switch (LSlave::_state) {

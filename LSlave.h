@@ -28,10 +28,8 @@
 
 #include <Arduino.h>
 #include <LiquidCrystal.h>
-#include <Ethernet.h>
-#include "Core.h"
+#include <CoreSlave.h>
 #include "config.h"
-#include "macros.h"
 
 
 // 255 / 17 fragments <=> 1 step = 15
@@ -133,6 +131,8 @@
   B10000, \
   B10000, \
   B10000 }
+  
+#define LCDCHAR(ch) static const uint8_t ch[] PROGMEM
 
 #define NUMBEROFMENU_HOME       1
 /*
@@ -158,7 +158,7 @@ class LSlave {
 
   static void begin();
   static void check();
-  static void shutdown();
+  static void idle();
   static void printInfo();
 
   // inline
