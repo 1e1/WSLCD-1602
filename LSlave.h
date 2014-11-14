@@ -23,13 +23,13 @@
   *
   */
 
-#ifndef LSLAVE2_H_
-#define LSLAVE2_H_
+#ifndef LSLAVE_H_
+#define LSLAVE_H_
 
 #include <Arduino.h>
 #include <LiquidCrystal.h>
 #include <Ethernet.h>
-#include "Core2.h"
+#include "Core.h"
 #include "config.h"
 #include "macros.h"
 
@@ -144,7 +144,7 @@
 */
 
 
-class LSlave2 {
+class LSlave {
 
   public:
   static const uint8_t index_info;
@@ -194,16 +194,16 @@ class LSlave2 {
  **********************************************************/
 
 
-__attribute__((always_inline)) inline void LSlave2::uncheck()
+__attribute__((always_inline)) inline void LSlave::uncheck()
 {
 
 }
 
 
-__attribute__((always_inline)) inline void LSlave2::jump(const uint8_t inc)
+__attribute__((always_inline)) inline void LSlave::jump(const uint8_t inc)
 {
-  LSlave2::_menuIndex = (_menuIndex+inc) % LSlave2::_menuMax;
+  LSlave::_menuIndex = (_menuIndex+inc) % LSlave::_menuMax;
 }
 
 
-#endif LSLAVE2_H_
+#endif
