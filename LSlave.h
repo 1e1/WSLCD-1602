@@ -162,7 +162,7 @@ class LSlave {
   static void printInfo();
 
   // inline
-  static void uncheck();
+  __attribute__((always_inline)) inline static void uncheck();
 
   protected:
   static LiquidCrystal _lcd;
@@ -196,7 +196,6 @@ class LSlave {
 
 __attribute__((always_inline)) inline void LSlave::uncheck()
 {
-
 }
 
 
